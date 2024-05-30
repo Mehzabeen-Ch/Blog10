@@ -13,3 +13,4 @@ I am a person that writes stuff and keeps a note of what I currently do or have 
 3. I shall add a form screenshot to Blog10 page<br> 
 4. I shall add a coffee page which has Bootstrap script and URL being used. (Under Construction).
 5. I shall add a form into form page. (Under Construction)
+6. My attempt of placing a form on a Bootstrap Card component for Task 4 (Page Bootrap Form).
