@@ -1,0 +1,191 @@
+---
+layout: layouts/base.njk
+eleventyNavigation:
+  key: More Forms
+  order: 3
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<form action = "">
+    <h1> Please select a color </h1>
+    <fieldset>
+        <select id = "selColor">
+            <option value = "#FFFFFF">White</option>
+            <option value = "#FF0000">Red</option>
+            <option value = "#FFCC00">Orange</option>
+            <option value = "#FFFF00">Yellow</option>
+            <option value = "#00FF00">Green</option>
+            <option value = "#000FF">Blue</option>
+            <option value = "#663366">Indigo</option>
+            <option value = "#FF00FF">Violet</option>
+</select>
+
+<input type = "button"
+value = "change color"
+onclick = "changeColor()"/>
+</fieldset>
+</form>
+
+<h2>
+    What do you want on your pizza?
+</h2>
+<form action = "">
+    <fieldset>
+        <input type = "checkbox"
+        id = "chkPepperoni"
+        value = "pepperoni" />
+<label>Pepperoni</label>
+
+<input type ="checkbox"
+id="chkMushroom"
+value="mushrooms"/>
+<label>Mushrooms</label>
+
+<input type ="checkbox"
+id = "chkSausage"
+value ="sausage" />
+<label>Sausage</label>
+
+<button type = "button"
+onclick="order()">
+Order Pizza</button>
+    </fieldset>
+</form>
+
+<sidebar id = "sidebar">
+<h3>Your order:</h3>
+<div id = "output">
+</div>
+</sidebar>
+<hr>
+
+
+<div class = "DrinksContent">
+
+<h3>Which drink would you like to order </h3>
+
+<form action = "">
+<fieldset>
+    
+<input type = "radio"
+       Name = "drink"
+       id = "waterBottle"
+       value = "Water"
+       checked = "checked" />
+<label> Water Bottle</label>
+
+<input type = "radio"
+    Name = "drink"
+    id = "fizzyDrink"
+    value = "Fizzy Drink"
+    checked = "checked" />
+<label> Fizzy Drink</label>
+
+<input type = "radio"
+    Name = "drink"
+    id = "orangeJuice"
+    value = "Orange Juice"
+    checked = "checked" />
+<label> Orange Juice</label>
+
+<br>
+
+<button type = "button"
+
+    onclick="freeDrink()">Order a free drink </button>
+   
+
+</fieldset>
+</form>
+
+<div id ="input"></div>
+
+<div> <!-- end drinkscontent-->
+
+    
+
+<Script>
+    function changeColor(){
+        var selColor = document.getElementById("selColor");
+        var color = selColor.value;
+        document.body.style.backgroundColor= color;
+
+    } 
+    </script>
+
+
+
+<Script>
+    function order() {
+        var chkPepperoni = document.getElementById("chkPepperoni");
+        var chkMushroom = document.getElementById("chkMushroom");
+        var chkSausage = document.getElementById("chkSausage");
+        
+        var output = document.getElementById("output");
+        var result = "<ul> \n"
+
+        if (chkPepperoni.checked) {
+            result += "<li>" + chkPepperoni.value + "<\/li> \n";
+        }
+        if (chkMushroom.checked) {
+            result += "<li>" + chkMushroom.value + "<\/li> \n";
+        }
+        if (chkSausage.checked) {
+            result += "<li>" + chkSausage.value + "<\/li> \n";
+        }
+
+        result += "<\/ul> \n"
+        output.innerHTML = result;
+
+
+        document.body.style.backgroundColor= color;
+
+}
+</script>
+
+<script>
+
+function freeDrink(){
+var drink = document.getElementsByName("drink");
+
+for (i=0; i < drink.length; i++) {
+currentDrink = drink[i];
+
+if(currentDrink.checked){
+var selectedDrink = currentDrink.value;
+}
+}
+
+var output = document.getElementById("input");
+var response = "<h2> You chose to have the following drink: ";
+    
+    response += selectedDrink + "<\/h2> \n";
+    output.innerHTML = response;
+
+    } 
+
+</script>
+
+<form action = "">
+    <fieldset>
+
+<button type = "button"
+
+    onclick="document.write ('Thank you for your order today!')";>Submit </button>
+    </fieldset>
+</form>
+
+<footer id = "footer">
+    contact and footer info
+</footer>
+</body>
+</html>
+
